@@ -1,8 +1,12 @@
-FROM quay.io/wildfly/wildfly:latest
+# Use the official JBoss WildFly image
+FROM jboss/wildfly:latest
 
-COPY ./standalone.xml /opt/jboss/wildfly/standalone/configuration/
-COPY ./kitchensink.war /opt/jboss/wildfly/standalone/deployments/
+# Copy the WAR file from the Maven target directory
+COPY target/standalone.xml /opt/jboss/wildfly/standalone/configuration/
+COPY target/kitchensink.war /opt/jboss/wildfly/standalone/deployments/
 
+# Expose the default WildFly HTTP port
 EXPOSE 8080
 
+# Start WildFly in standalone mode, binding to all interfaces
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]

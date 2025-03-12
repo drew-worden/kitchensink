@@ -11,6 +11,7 @@
 <file name="/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/util/Resources.java">
 </file>
 <file name="/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/model/Member.java">
+<error line="27" column="8" severity="error" message="Unused import - jakarta.persistence.GenerationType." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
 </file>
 <file name="/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/rest/JaxRsActivator.java">
 </file>

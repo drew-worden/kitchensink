@@ -1,8 +1,62 @@
-<datasource jndi-name="java:jboss/datasources/H2DS" pool-name="H2DS" enabled="true">
-    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:/import.sql'</connection-url>
-    <driver>h2</driver>
-    <security>
-        <user-name>sa</user-name>
-        <password>sa</password>
-    </security>
-</datasource>
+<?xml version="1.0" encoding="UTF-8"?>
+<server xmlns="urn:jboss:domain:4.0">
+    <extensions>
+        <!-- List of required extensions -->
+        <extension module="org.jboss.as.connector"/>
+        <extension module="org.jboss.as.datasources"/>
+        <extension module="org.jboss.as.logging"/>
+        <extension module="org.jboss.as.web"/>
+        <!-- ... other extensions ... -->
+    </extensions>
+
+    <management>
+        <security-realms>
+            <security-realm name="ManagementRealm">
+                <authentication>
+                    <local default-user="$local"/>
+                </authentication>
+            </security-realm>
+        </security-realms>
+        <management-interfaces>
+            <http-interface security-realm="ManagementRealm">
+                <socket-binding http="management-http"/>
+            </http-interface>
+        </management-interfaces>
+    </management>
+
+    <profile>
+        <!-- Datasources Subsystem -->
+        <subsystem xmlns="urn:jboss:domain:datasources:7.0">
+            <datasources>
+                <datasource jndi-name="java:jboss/datasources/H2DS" pool-name="H2DS" enabled="true">
+                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:/import.sql'</connection-url>
+                    <driver>h2</driver>
+                    <security>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
+                    </security>
+                </datasource>
+                <drivers>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                </drivers>
+            </datasources>
+        </subsystem>
+        <!-- Include other necessary subsystems here -->
+    </profile>
+
+    <interfaces>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:0.0.0.0}"/>
+        </interface>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:0.0.0.0}"/>
+        </interface>
+    </interfaces>
+
+    <socket-binding-group name="standard-sockets" default-interface="public">
+        <socket-binding name="management-http" port="9990"/>
+        <socket-binding name="http" port="8080"/>
+    </socket-binding-group>
+</server>

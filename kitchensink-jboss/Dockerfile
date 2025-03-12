@@ -16,8 +16,11 @@ FROM jboss/wildfly:latest
 # Copy the built WAR file from the builder stage
 COPY --from=builder /app/target/kitchensink.war /opt/jboss/wildfly/standalone/deployments/
 
+# Copy the custom standalone.xml file (adjust path if different)
+COPY --from=builder /app/src/main/resources/standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
+
 # Expose WildFly's default HTTP port
 EXPOSE 8080
 
-# Start WildFly
-CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
+# Start WildFly with the custom standalone.xml
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-c", "standalone.xml"]

@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2025 JBoss by Red Hat</copyright>
     <item>
-      <title>File: 0,
+      <title>File: 11,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -44,6 +44,160 @@ under the License.
             </tr>
           </thead>
           <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.test.MemberRegistrationIT.java">org/jboss/as/quickstarts/kitchensink/test/MemberRegistrationIT.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#META-INF.persistence.xml">META-INF/persistence.xml</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.controller.MemberController.java">org/jboss/as/quickstarts/kitchensink/controller/MemberController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.data.MemberListProducer.java">org/jboss/as/quickstarts/kitchensink/data/MemberListProducer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.rest.MemberResourceRESTService.java">org/jboss/as/quickstarts/kitchensink/rest/MemberResourceRESTService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.test.RemoteMemberRegistrationIT.java">org/jboss/as/quickstarts/kitchensink/test/RemoteMemberRegistrationIT.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.util.Resources.java">org/jboss/as/quickstarts/kitchensink/util/Resources.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.model.Member.java">org/jboss/as/quickstarts/kitchensink/model/Member.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.rest.JaxRsActivator.java">org/jboss/as/quickstarts/kitchensink/rest/JaxRsActivator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.service.MemberRegistration.java">org/jboss/as/quickstarts/kitchensink/service/MemberRegistration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/wildfly/wildfly-quickstart-parent/kitchensink/checkstyle.html#org.jboss.as.quickstarts.kitchensink.data.MemberRepository.java">org/jboss/as/quickstarts/kitchensink/data/MemberRepository.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
                       </tbody>
         </table>
         

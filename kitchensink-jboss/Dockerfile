@@ -2,7 +2,6 @@
 FROM jboss/wildfly:latest
 
 # Copy the WAR file from the Maven target directory
-COPY target/standalone.xml /opt/jboss/wildfly/standalone/configuration/
 COPY target/kitchensink.war /opt/jboss/wildfly/standalone/deployments/
 
 # Expose the default WildFly HTTP port

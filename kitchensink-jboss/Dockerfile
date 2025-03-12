@@ -16,12 +16,6 @@ FROM jboss/wildfly:latest
 # Copy the built WAR file from the builder stage
 COPY --from=builder /app/target/kitchensink.war /opt/jboss/wildfly/standalone/deployments/
 
-# Copy the CLI script for seed data
-COPY --from=builder /app/seed-data.cli /opt/jboss/wildfly/
-
-# Run the CLI script to load seed data
-RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file=/opt/jboss/wildfly/seed-data.cli
-
 # Expose WildFly's default HTTP port
 EXPOSE 8080
 

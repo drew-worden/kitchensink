@@ -1,17 +1,89 @@
-<subsystem xmlns="urn:jboss:domain:datasources:7.0">
-    <datasources>
-        <datasource jndi-name="java:jboss/datasources/KitchensinkQuickstartDS" pool-name="kitchensink-quickstart" enabled="true">
-            <connection-url>jdbc:h2:mem:kitchensink-quickstart;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
-            <driver>h2</driver>
-            <security>
-                <user-name>sa</user-name>
-                <password>sa</password>
-            </security>
-        </datasource>
-        <drivers>
-            <driver name="h2" module="com.h2database.h2">
-                <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
-            </driver>
-        </drivers>
-    </datasources>
-</subsystem>
+<?xml version='1.0' encoding='UTF-8'?>
+<server xmlns="urn:jboss:domain:17.0">
+    <extensions>
+        <!-- Include required extensions -->
+        <extension module="org.jboss.as.connector"/>
+        <extension module="org.jboss.as.deployment-scanner"/>
+        <extension module="org.jboss.as.ee"/>
+        <extension module="org.jboss.as.jpa"/>
+        <extension module="org.jboss.as.naming"/>
+        <extension module="org.jboss.as.security"/>
+        <extension module="org.jboss.as.transactions"/>
+        <extension module="org.jboss.as.webservices"/>
+        <extension module="org.wildfly.extension.undertow"/>
+        <extension module="org.jboss.as.weld"/>
+        <extension module="org.wildfly.extension.bean-validation"/>
+        <extension module="org.wildfly.extension.io"/>
+        <extension module="org.wildfly.extension.request-controller"/>
+        <extension module="org.wildfly.extension.security-manager"/>
+    </extensions>
+
+    <management>
+        <security-realms>
+            <security-realm name="ManagementRealm">
+                <authentication>
+                    <local default-user="$local" skip-group-loading="true"/>
+                    <properties path="mgmt-users.properties" relative-to="jboss.server.config.dir"/>
+                </authentication>
+            </security-realm>
+        </security-realms>
+        <management-interfaces>
+            <http-interface security-realm="ManagementRealm">
+                <http-upgrade enabled="true"/>
+                <socket-binding http="management-http"/>
+            </http-interface>
+        </management-interfaces>
+    </management>
+
+    <profile>
+        <!-- Your custom datasource subsystem -->
+        <subsystem xmlns="urn:jboss:domain:datasources:7.0">
+            <datasources>
+                <datasource jndi-name="java:jboss/datasources/KitchensinkQuickstartDS" pool-name="kitchensink-quickstart" enabled="true">
+                    <connection-url>jdbc:h2:mem:kitchensink-quickstart;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
+                    <driver>h2</driver>
+                    <security>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
+                    </security>
+                </datasource>
+                <drivers>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                </drivers>
+            </datasources>
+        </subsystem>
+
+        <!-- Minimal subsystems required for your app -->
+        <subsystem xmlns="urn:jboss:domain:deployment-scanner:2.0">
+            <deployment-scanner path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:ee:5.0"/>
+        <subsystem xmlns="urn:jboss:domain:jpa:1.1">
+            <jpa default-datasource="java:jboss/datasources/KitchensinkQuickstartDS"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:naming:2.0"/>
+        <subsystem xmlns="urn:jboss:domain:security:2.0"/>
+        <subsystem xmlns="urn:jboss:domain:transactions:6.0"/>
+        <subsystem xmlns="urn:jboss:domain:webservices:2.0"/>
+        <subsystem xmlns="urn:jboss:domain:undertow:10.0"/>
+        <subsystem xmlns="urn:jboss:domain:weld:5.0"/>
+        <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
+        <subsystem xmlns="urn:jboss:domain:io:3.0"/>
+    </profile>
+
+    <interfaces>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
+        </interface>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:0.0.0.0}"/>
+        </interface>
+    </interfaces>
+
+    <socket-binding-group name="standard-sockets" default-interface="public">
+        <socket-binding name="management-http" port="${jboss.management.http.port:9990}"/>
+        <socket-binding name="http" port="${jboss.http.port:8080}"/>
+    </socket-binding-group>
+</server>

@@ -1,34 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <server xmlns="urn:jboss:domain:17.0">
     <extensions>
-        <!-- Include required extensions -->
         <extension module="org.jboss.as.connector"/>
         <extension module="org.jboss.as.deployment-scanner"/>
         <extension module="org.jboss.as.ee"/>
         <extension module="org.jboss.as.jpa"/>
         <extension module="org.jboss.as.naming"/>
-        <extension module="org.jboss.as.security"/>
         <extension module="org.jboss.as.transactions"/>
         <extension module="org.jboss.as.webservices"/>
         <extension module="org.wildfly.extension.undertow"/>
         <extension module="org.jboss.as.weld"/>
         <extension module="org.wildfly.extension.bean-validation"/>
         <extension module="org.wildfly.extension.io"/>
-        <extension module="org.wildfly.extension.request-controller"/>
-        <extension module="org.wildfly.extension.security-manager"/>
+        <extension module="org.wildfly.extension.elytron"/> <!-- Add Elytron -->
     </extensions>
 
     <management>
-        <security-realms>
-            <security-realm name="ManagementRealm">
-                <authentication>
-                    <local default-user="$local" skip-group-loading="true"/>
-                    <properties path="mgmt-users.properties" relative-to="jboss.server.config.dir"/>
-                </authentication>
-            </security-realm>
-        </security-realms>
+        <!-- Elytron-based security configuration -->
+        <security-realms/> <!-- Empty; no legacy security realms -->
         <management-interfaces>
-            <http-interface security-realm="ManagementRealm">
+            <http-interface http-authentication-factory="management-http-authentication">
                 <http-upgrade enabled="true"/>
                 <socket-binding http="management-http"/>
             </http-interface>
@@ -36,7 +27,27 @@
     </management>
 
     <profile>
-        <!-- Your custom datasource subsystem -->
+        <!-- Elytron subsystem -->
+        <subsystem xmlns="urn:jboss:domain:elytron:13.0">
+            <http>
+                <http-authentication-factory name="management-http-authentication" security-domain="ManagementDomain">
+                    <mechanism-configuration>
+                        <mechanism mechanism-name="BASIC"/>
+                    </mechanism-configuration>
+                </http-authentication-factory>
+            </http>
+            <security-domains>
+                <security-domain name="ManagementDomain" default-realm="ManagementRealm">
+                    <realm name="ManagementRealm" type="properties">
+                        <properties path="mgmt-users.properties" relative-to="jboss.server.config.dir"/>
+                    </realm>
+                </security-domain>
+            </security-domains>
+            <simple-permission-mapper name="default-permission-mapper" permission-mappings="[{class-name='org.wildfly.security.auth.permission.LoginPermission'}]"/>
+        </subsystem>
+
+        <!-- Datasource subsystem -->
+        <!--suppress XmlInvalidNamespace -->
         <subsystem xmlns="urn:jboss:domain:datasources:7.0">
             <datasources>
                 <datasource jndi-name="java:jboss/datasources/KitchensinkQuickstartDS" pool-name="kitchensink-quickstart" enabled="true">
@@ -55,7 +66,7 @@
             </datasources>
         </subsystem>
 
-        <!-- Minimal subsystems required for your app -->
+        <!-- Other required subsystems -->
         <subsystem xmlns="urn:jboss:domain:deployment-scanner:2.0">
             <deployment-scanner path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
         </subsystem>
@@ -64,7 +75,6 @@
             <jpa default-datasource="java:jboss/datasources/KitchensinkQuickstartDS"/>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:naming:2.0"/>
-        <subsystem xmlns="urn:jboss:domain:security:2.0"/>
         <subsystem xmlns="urn:jboss:domain:transactions:6.0"/>
         <subsystem xmlns="urn:jboss:domain:webservices:2.0"/>
         <subsystem xmlns="urn:jboss:domain:undertow:10.0"/>

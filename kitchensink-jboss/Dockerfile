@@ -16,9 +16,6 @@ FROM jboss/wildfly:latest
 # Copy the built WAR file from the builder stage
 COPY --from=builder /app/target/kitchensink.war /opt/jboss/wildfly/standalone/deployments/
 
-# Copy the custom WildFly configuration file from the resources directory
-COPY --from=builder /app/src/main/resources/standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
-
 # Copy the SQL script (import.sql) from the resources directory so that it's available on the classpath
 COPY --from=builder /app/src/main/resources/import.sql /opt/jboss/wildfly/standalone/configuration/import.sql
 

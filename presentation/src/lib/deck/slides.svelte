@@ -43,38 +43,216 @@
 		</section>
 
 		<!-- Slide 2: Introduction with Markdown Bullet Points -->
-		<section
-			data-markdown
-			data-background-image="https://via.placeholder.com/1200x800.png?text=MongoDB+Background+2"
-		>
-			<textarea data-template>
-				## Introduction - Overview of the migration challenge - Key objectives and
-				deliverables - Migration approach and strategy
-			</textarea>
-			<div class="logo-overlay">
-				<img
-					src="https://via.placeholder.com/80x80.png?text=MongoDB+Logo"
-					alt="MongoDB Logo"
-				/>
+		<section class="slide-content" data-auto-animate>
+			<h1>The Task</h1>
+			<p>Is to turn this...</p>
+			<div class="container">
+				<p style="color: var(--r-link-color-dark); text-decoration: underline;">
+					Kitchen Sink JBOSS Legacy Application
+				</p>
+				<ul>
+					<li class="fragment">Built on JBOSS EAP</li>
+					<li class="fragment">Java v8</li>
+					<li class="fragment">Embedded H2 Database</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>The Task</h1>
+			<p>into this...</p>
+			<div class="container">
+				<p style="color: var(--r-link-color-dark); text-decoration: underline;">
+					Kitchen Sink Spring Boot Application
+				</p>
+				<ul>
+					<li class="fragment">Built on Spring Boot 3</li>
+					<li class="fragment">Java v21</li>
+					<li class="fragment">External MongoDB database</li>
+				</ul>
 			</div>
 		</section>
 
 		<!-- Slide 3: Code Animation Slide with a Shape -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Code+Background"
-		>
-			<div class="slide-content">
-				<h2>Step Through Code</h2>
-				<pre><code class="fragment" data-fragment-index="1">
-  // Initialize the application environment
-  function init() &#123;
-    console.log("Initializing environment...");
-  &#125;
-          </code></pre>
-				<pre><code class="fragment" data-fragment-index="2">
-  // Start the application
-  init();
-          </code></pre>
+		<section class="slide-content" data-auto-animate>
+			<h1>The Plan</h1>
+			<p>M.I.G.R.A.T.E</p>
+			<ul>
+				<li class="fragment">
+					<span style="color: var(--r-link-color)">M</span>ap the Existing System
+				</li>
+				<li class="fragment">
+					<span style="color: var(--r-link-color)">I</span>dentify Transformation Goals
+				</li>
+				<li class="fragment">
+					<span style="color: var(--r-link-color)">G</span>ather Tools and Resources
+				</li>
+				<li class="fragment">
+					<span style="color: var(--r-link-color)">R</span>estructure Data and Logic
+				</li>
+				<li class="fragment">
+					<span style="color: var(--r-link-color)">A</span>utomate the Migration Process
+				</li>
+				<li class="fragment">
+					<span style="color: var(--r-link-color)">T</span>est Thoroughly
+				</li>
+				<li class="fragment">
+					<span style="color: var(--r-link-color)">E</span>xecute and Evaluate
+				</li>
+			</ul>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Map the Existing System</h1>
+			<p><span style="color: var(--r-link-color)">M</span>.I.G.R.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">
+					Analyze both the application codebase and database structure to understand their
+					interactions and dependencies.
+				</p>
+				<ul>
+					<li class="fragment">
+						Trace app logic to identify database calls and business rules.
+					</li>
+					<li class="fragment">
+						Profile database operations to log queries and usage patterns.
+					</li>
+					<li class="fragment">Document app-database touchpoints and data flows.</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Identify Transformation Goals</h1>
+			<p>M.<span style="color: var(--r-link-color)">I</span>.G.R.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">
+					Set goals for application/database upgrades, targeting capabilities and customer
+					needs.
+				</p>
+				<ul>
+					<li class="fragment">
+						Define app goals, such as refactoring to microservices.
+					</li>
+					<li class="fragment">
+						Define database goals, such as reducing query latency by 40%.
+					</li>
+					<li class="fragment">
+						Collaborate with stakeholders to prioritize outcomes like easier feature
+						additions.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Gather Tools and Resources</h1>
+			<p>M.I.<span style="color: var(--r-link-color)">G</span>.R.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">
+					Assemble tools to streamline both application refactoring and database
+					migration.
+				</p>
+				<ul>
+					<li class="fragment">
+						Use ANTLR for app code conversion (e.g., COBOL to Java) and database logic
+						translation.
+					</li>
+					<li class="fragment">
+						Employ Apache NiFi for database ETL and Apache Kafka for app-database data
+						streaming.
+					</li>
+					<li class="fragment">
+						Integrate generative AI (e.g., GitHub Copilot) for drafting app and MongoDB
+						code.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Restructure Data and Logic</h1>
+			<p>M.I.G.<span style="color: var(--r-link-color)">R</span>.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">
+					Redesign the application architecture and database model to fit modern
+					paradigms.
+				</p>
+				<ul>
+					<li class="fragment">
+						Refactor app logic into modular services using SOLID principles.
+						abstraction.
+					</li>
+					<li class="fragment">
+						Transform database structures into MongoDB collections.
+					</li>
+					<li class="fragment">
+						Replace app-database calls with MongoDB driver operations.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Automate the Migration Process</h1>
+			<p>M.I.G.R.<span style="color: var(--r-link-color)">A</span>.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">
+					Automate both application deployment and database migration to reduce manual
+					effort.
+				</p>
+				<ul>
+					<li class="fragment">
+						Use Jenkins to automate app build/deploy pipelines and database loading
+						scripts.
+					</li>
+					<li class="fragment">
+						Implement Kafka for real-time data sync between old and new systems
+					</li>
+					<li class="fragment">
+						Automate code conversion with ANTLR visitors for app logic and MongoDB query
+						generation.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Test Thoroughly</h1>
+			<p>M.I.G.R.A.<span style="color: var(--r-link-color)">T</span>.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">
+					Validate the migrated application and database together for functionality and
+					performance.
+				</p>
+				<ul>
+					<li class="fragment">
+						Run unit tests on app services to verify business logic.
+					</li>
+					<li class="fragment">Test database operations to ensure data accuracy.</li>
+					<li class="fragment">
+						Conduct integration tests to check app-database/app-app interactions.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Execute and Evaluate</h1>
+			<p>M.I.G.R.A.T.<span style="color: var(--r-link-color)">E</span></p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">
+					Deploy the modernized app and database, assessing outcomes against objectives.
+				</p>
+				<ul>
+					<li class="fragment">
+						Execute a phased rollout using dual-write for continuity.
+					</li>
+					<li class="fragment">Monitor app performance with tools like Spring Actuator and database metrics with MongoDB Atlas.</li>
+					<li class="fragment">
+						Evaluate success such as app uptime, database queries latency, and easier feature updates.
+					</li>
+				</ul>
 			</div>
 		</section>
 
@@ -366,5 +544,12 @@
 <style>
 	.logo {
 		width: 150px;
+	}
+
+	.container {
+		box-shadow: rgb(1, 18, 26) 0px 4px 20px -4px;
+		border: 1px solid rgb(61, 79, 88);
+		border-radius: 24px;
+		padding: 1em 1em 1.4em 1em;
 	}
 </style>

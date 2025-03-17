@@ -16,7 +16,7 @@
     limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
@@ -30,7 +30,7 @@
     </parent>
     <artifactId>kitchensink</artifactId>
     <version>8.0.0.GA</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Quickstart: kitchensink</name>
     <description>A starter Jakarta EE web application project for use in JBoss EAP</description>
 
@@ -115,7 +115,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-        </dependencies>
     </dependencyManagement>
 
     <dependencies>
@@ -132,11 +131,6 @@
         </dependency>
 
         <!-- Needed for running tests (you may also use TestNG) -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
 
         <!-- Now we declare any tools needed -->
 

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "convert-gpt"
+version = "0.1.0"
+description = ""
+authors = ["drew-worden <drew.p.worden@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^1.66.3"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

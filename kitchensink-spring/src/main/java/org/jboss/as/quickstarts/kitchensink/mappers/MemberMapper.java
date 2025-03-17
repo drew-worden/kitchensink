@@ -15,6 +15,7 @@ public class MemberMapper {
 
     public  static MemberResponseDTO toResponse(Member member) {
         return MemberResponseDTO.builder()
+                .id(member.getId())
                 .name(member.getName())
                 .email(member.getEmail())
                 .phoneNumber(member.getPhoneNumber())

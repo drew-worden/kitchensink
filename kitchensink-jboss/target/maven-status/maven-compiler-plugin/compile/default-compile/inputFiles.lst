@@ -1,8 +1,0 @@
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/util/Resources.java
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/rest/MemberResourceRESTService.java
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/service/MemberRegistration.java
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/rest/JaxRsActivator.java
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/controller/MemberController.java
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/data/MemberListProducer.java
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/data/MemberRepository.java
-/home/drew/Projects/kitchensink/kitchensink-jboss/src/main/java/org/jboss/as/quickstarts/kitchensink/model/Member.java

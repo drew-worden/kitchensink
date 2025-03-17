@@ -26,12 +26,10 @@
       <!-- The datasource is deployed as WEB-INF/kitchensink-quickstart-ds.xml, you
          can find it in the source at src/main/webapp/WEB-INF/kitchensink-quickstart-ds.xml -->
       <jta-data-source>java:jboss/datasources/KitchensinkQuickstartDS</jta-data-source>
-      <class>org.jboss.as.quickstarts.kitchensink.model.Member</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
-         <property name="hibernate.show_sql" value="true" />
-         <property name="hibernate.format_sql" value="true" />
+         <property name="hibernate.show_sql" value="false" />
       </properties>
    </persistence-unit>
 </persistence>

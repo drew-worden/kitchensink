@@ -4,5 +4,11 @@
 # Build
 target
 
+# Caches
+.rewrite-cache
+
 # Dependencies
 node_modules
+
+# Executables
+spring-boot-migrator.jar

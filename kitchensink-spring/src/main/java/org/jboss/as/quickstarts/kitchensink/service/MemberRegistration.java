@@ -1,6 +1,7 @@
 package org.jboss.as.quickstarts.kitchensink.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.bson.types.ObjectId;
 import org.jboss.as.quickstarts.kitchensink.dtos.members.MemberCreateDTO;
 import org.jboss.as.quickstarts.kitchensink.dtos.members.MemberResponseDTO;
 import org.jboss.as.quickstarts.kitchensink.exceptions.ResourceNotFoundException;
@@ -25,9 +26,16 @@ public class MemberRegistration {
         return MemberMapper.toResponse(memberEntity);
     }
 
-    public MemberResponseDTO getMemberById(Long id) {
-        Member memberEntity = memberRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Member not found with id: " + id));
+    public MemberResponseDTO getMemberById(String id) {
+        Member memberEntity = memberRepository.findById(new ObjectId(id)).orElseThrow(() -> new ResourceNotFoundException("Member not found with id: " + id));
         log.info("Found member: {}", memberEntity.getName());
         return MemberMapper.toResponse(memberEntity);
+    }
+
+    public Iterable<MemberResponseDTO> getAllMembers() {
+        log.info("Retrieving all members");
+        return memberRepository.findAllByOrderByNameAsc().stream()
+                .map(MemberMapper::toResponse)
+                .toList();
     }
 }

@@ -1,49 +1,32 @@
-# Stage 1: Build the application with Maven
-FROM maven:3.8.6-openjdk-17 AS builder
-
-WORKDIR /app
-
-# Copy project files
-COPY pom.xml .
-COPY src/ src/
-COPY seed.sql .
-
-# Build the application
-RUN mvn clean package -DskipTests
-
-# Stage 2: Deploy to WildFly
-FROM quay.io/wildfly/wildfly:latest-jdk17
-
-LABEL maintainer="Your Name <your.email@example.com>"
-
-ENV WILDFLY_HOME=/opt/wildfly \
-    DEPLOYMENT_DIR=/opt/wildfly/standalone/deployments
-
-USER root
-
-COPY --from=builder --chown=wildfly:wildfly /app/target/kitchensink.war ${DEPLOYMENT_DIR}/
-COPY --from=builder --chown=wildfly:wildfly /app/src/main/webapp/WEB-INF/kitchensink-quickstart-ds.xml ${WILDFLY_HOME}/standalone/configuration/
-COPY --from=builder --chown=wildfly:wildfly /app/seed.sql ${WILDFLY_HOME}/standalone/data/
-
-RUN echo "JAVA_OPTS=\"\$JAVA_OPTS -Djboss.server.data.dir=/opt/wildfly/standalone/data\"" >> ${WILDFLY_HOME}/bin/standalone.conf && \
-    ${WILDFLY_HOME}/bin/jboss-cli.sh --command="embed-server, \
-    /subsystem=datasources/data-source=KitchensinkQuickstartDS:add( \
-    jndi-name=java:jboss/datasources/KitchensinkQuickstartDS, \
-    driver-name=h2, \
-    connection-url=jdbc:h2:mem:kitchensink;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE, \
-    user-name=sa, \
-    password=sa, \
-    enabled=true)" && \
-    ${WILDFLY_HOME}/bin/jboss-cli.sh --command="embed-server, \
-    /subsystem=datasources/jdbc-driver=h2:add( \
-    driver-name=h2, \
-    driver-module-name=org.h2, \
-    driver-class-name=org.h2.Driver)"
-
-EXPOSE 8080 9990
-
-USER wildfly
-
-WORKDIR ${WILDFLY_HOME}
-
-CMD ["/opt/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+# ----- Stage 1: Build the application using Maven -----
+    FROM maven:3.8.6-openjdk-11 AS build
+    WORKDIR /app
+    
+    # Copy the Maven project file
+    COPY pom.xml .
+    
+    # Copy configuration files into the expected source structure.
+    # (Ensure your local project has these files at these locations.)
+    COPY persistence.xml src/main/resources/META-INF/persistence.xml
+    COPY kitchensink-quickstart-ds.xml src/main/webapp/WEB-INF/kitchensink-quickstart-ds.xml
+    
+    # If you have additional source code, copy the entire src directory:
+    # COPY src src
+    
+    # Build the project and package the WAR; skipping tests for speed.
+    RUN mvn clean package -DskipTests
+    
+    # ----- Stage 2: Deploy the WAR in JBoss/WildFly -----
+    FROM jboss/wildfly:latest
+    # Remove any default deployments if desired
+    RUN rm -rf /opt/jboss/wildfly/standalone/deployments/*
+    
+    # Copy the built WAR file from the previous stage
+    COPY --from=build /app/target/kitchensink.war /opt/jboss/wildfly/standalone/deployments/
+    
+    # Expose the default HTTP port
+    EXPOSE 8080
+    
+    # Start WildFly in standalone mode binding to all interfaces
+    CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
+    

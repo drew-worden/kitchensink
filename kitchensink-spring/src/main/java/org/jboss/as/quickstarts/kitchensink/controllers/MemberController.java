@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.kitchensink.controller;
+package org.jboss.as.quickstarts.kitchensink.controllers;
 
 import com.mongodb.MongoWriteException;
 import jakarta.validation.Valid;

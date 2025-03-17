@@ -1,21 +1,24 @@
-# Stage 1: Build the application using Maven with OpenJDK 21
-FROM maven:3.9.2-openjdk-21-slim AS build
+# Stage 1: Build the application
+FROM maven:3.8.6-openjdk-21 AS build
 WORKDIR /app
 
-# Copy pom.xml first and download dependencies
+# Copy pom.xml and download dependencies
 COPY pom.xml .
-RUN mvn dependency:go-offline -B
+RUN mvn dependency:go-offline
 
-# Copy the source code and build the application (skip tests for speed)
+# Copy source code and build the application
 COPY src ./src
-RUN mvn clean package -DskipTests
+RUN mvn package -DskipTests
 
-# Stage 2: Create the runtime image using OpenJDK 21
-FROM openjdk:21-slim
+# Stage 2: Run the application
+FROM openjdk:21-jdk-slim
 WORKDIR /app
 
-# Copy the packaged jar from the build stage (adjust the jar name as needed)
-COPY --from=build /app/target/kitchensink.jar .
+# Copy the built JAR from the build stage
+COPY --from=build /app/target/*.jar app.jar
 
+# Expose the port the application runs on (default Spring Boot port)
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "kitchensink.jar"]
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]

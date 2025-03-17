@@ -1,6 +1,11 @@
 # Stage 1: Build the application
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM openjdk:21-jdk-slim AS build
 WORKDIR /app
+
+# Install Maven
+RUN apt-get update && \
+    apt-get install -y maven && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy pom.xml and download dependencies
 COPY pom.xml .
@@ -11,7 +16,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Stage 2: Run the application
-FROM eclipse-temurin:17-jdk-slim
+FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # Copy the built JAR from the build stage

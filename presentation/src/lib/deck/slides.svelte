@@ -123,6 +123,24 @@
 		</section>
 
 		<section class="slide-content" data-auto-animate>
+			<h1>Map the Existing System</h1>
+			<p><span style="color: var(--r-link-color)">M</span>.I.G.R.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">Execution</p>
+				<ul>
+					<li class="fragment">
+						Used tree and the IntellJ IDEA IDE's AppMap plugin to trace app logic to
+						identify database calls and business rules.
+					</li>
+					<div style="display: grid; grid-template-columns: 1fr 1fr;">
+						<img src="1.png" alt="" class="img fragment" />
+						<img src="2.png" alt="" class="img fragment" />
+					</div>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
 			<h1>Identify Transformation Goals</h1>
 			<p>M.<span style="color: var(--r-link-color)">I</span>.G.R.A.T.E</p>
 			<div class="container">
@@ -140,6 +158,21 @@
 					<li class="fragment">
 						Collaborate with stakeholders to prioritize outcomes like easier feature
 						additions.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Identify Transformation Goals</h1>
+			<p>M.<span style="color: var(--r-link-color)">I</span>.G.R.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">Execution</p>
+				<ul>
+					<li class="fragment">Move to Java 21 and SpringBoot 3.x.x</li>
+					<li class="fragment">Convert to controller/service/repository/dto paradigm</li>
+					<li class="fragment">
+						Use MongoDB as the database leveraging the Spring Data MongoDB library
 					</li>
 				</ul>
 			</div>
@@ -171,6 +204,24 @@
 		</section>
 
 		<section class="slide-content" data-auto-animate>
+			<h1>Gather Tools and Resources</h1>
+			<p>M.I.<span style="color: var(--r-link-color)">G</span>.R.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">Execution</p>
+				<ul>
+					<li class="fragment">
+						Use Spring Migrator to help do some initial conversion and then write a
+						simple generative AI script to pipe certain files into.
+					</li>
+					<div style="display: grid; grid-template-columns: 1fr 1fr;">
+						<img src="4.png" alt="" class="img fragment" />
+						<img src="5.png" alt="" class="img fragment" />
+					</div>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
 			<h1>Restructure Data and Logic</h1>
 			<p>M.I.G.<span style="color: var(--r-link-color)">R</span>.A.T.E</p>
 			<div class="container">
@@ -194,6 +245,42 @@
 		</section>
 
 		<section class="slide-content" data-auto-animate>
+			<h1>Restructure Data and Logic</h1>
+			<p>M.I.G.<span style="color: var(--r-link-color)">R</span>.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">Execution</p>
+				<ul>
+					<li class="fragment">
+						Using generative AI to assist, go through and convert the appropriate
+						structure.
+					</li>
+					<div style="display: grid; grid-template-columns: 1fr 1fr;">
+						<img src="6.png" alt="" class="img fragment" />
+						<img src="8.png" alt="" class="img fragment" />
+					</div>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
+			<h1>Restructure Data and Logic</h1>
+			<p>M.I.G.<span style="color: var(--r-link-color)">R</span>.A.T.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">Execution</p>
+				<ul>
+					<li class="fragment">
+						Using generative AI to assist, go through and convert the appropriate
+						structure.
+					</li>
+					<div style="display: grid; grid-template-columns: 1fr 1fr;">
+						<img src="7.png" alt="" class="img fragment" />
+						<img src="9.png" alt="" class="img fragment" />
+					</div>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
 			<h1>Automate the Migration Process</h1>
 			<p>M.I.G.R.<span style="color: var(--r-link-color)">A</span>.T.E</p>
 			<div class="container">
@@ -203,15 +290,10 @@
 				</p>
 				<ul>
 					<li class="fragment">
-						Use Jenkins to automate app build/deploy pipelines and database loading
-						scripts.
-					</li>
-					<li class="fragment">
-						Implement Kafka for real-time data sync between old and new systems
-					</li>
-					<li class="fragment">
-						Automate code conversion with ANTLR visitors for app logic and MongoDB query
-						generation.
+						Given a larger application with many entities, you can identify common
+						patters and write script to do the conversion automatically. For example
+						converting from JBOSS services to Spring ones. This is only a good idea if
+						the time investment works out.
 					</li>
 				</ul>
 			</div>
@@ -248,294 +330,46 @@
 					<li class="fragment">
 						Execute a phased rollout using dual-write for continuity.
 					</li>
-					<li class="fragment">Monitor app performance with tools like Spring Actuator and database metrics with MongoDB Atlas.</li>
 					<li class="fragment">
-						Evaluate success such as app uptime, database queries latency, and easier feature updates.
+						Monitor app performance with tools like Spring Actuator and database metrics
+						with MongoDB Atlas.
+					</li>
+					<li class="fragment">
+						Evaluate success such as app uptime, database queries latency, and easier
+						feature updates.
 					</li>
 				</ul>
 			</div>
 		</section>
-
-		<!-- Slide 4: Code Comparison Slide with Logo Overlay -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Comparison+Background"
-		>
-			<div class="slide-content">
-				<h2>Legacy vs Modern Code</h2>
-				<div class="two-column">
-					<div>
-						<h3>Legacy Code</h3>
-						<pre><code class="java">
-  // Legacy JBoss implementation
-  public void process() &#123;
-    // outdated logic here
-  &#125;
-              </code></pre>
-					</div>
-					<div>
-						<h3>Modern Code</h3>
-						<pre><code class="java">
-  // Modern Spring Boot approach
-  @RestController
-  public class ProcessController &#123;
-    @GetMapping("/process")
-    public String process() &#123;
-      return "Processed";
-    &#125;
-  &#125;
-              </code></pre>
-					</div>
-				</div>
-			</div>
-			<div class="logo-overlay">
-				<img
-					src="https://via.placeholder.com/80x80.png?text=MongoDB+Logo"
-					alt="MongoDB Logo"
-				/>
-			</div>
-		</section>
-
-		<!-- Slide 5: Bullet Points Slide -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Bullet+Points"
-		>
-			<div class="slide-content">
-				<h2>Key Migration Tasks</h2>
+		<section class="slide-content" data-auto-animate>
+			<h1>Execute and Evaluate</h1>
+			<p>M.I.G.R.A.T.<span style="color: var(--r-link-color)">E</span></p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">Execution</p>
 				<ul>
-					<li>Create a public GitHub repository</li>
-					<li>Analyze the legacy kitchensink application</li>
-					<li>Define the migration roadmap</li>
-					<li>Implement code refactoring</li>
-					<li>Integrate with MongoDB (optional)</li>
-				</ul>
-			</div>
-			<div class="logo-overlay">
-				<img
-					src="https://via.placeholder.com/80x80.png?text=MongoDB+Logo"
-					alt="MongoDB Logo"
-				/>
-			</div>
-		</section>
-
-		<!-- Slide 6: Image Slide with Background and Logo -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Architecture+Diagram"
-		>
-			<div class="slide-content">
-				<h2 style="color: white; background: rgba(0,0,0,0.5); padding: 10px;">
-					Architecture Diagram
-				</h2>
-			</div>
-			<div class="logo-overlay">
-				<img
-					src="https://via.placeholder.com/80x80.png?text=MongoDB+Logo"
-					alt="MongoDB Logo"
-				/>
-			</div>
-		</section>
-
-		<!-- Slide 7: Animated Code Walkthrough with Fragments -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Animated+Code"
-		>
-			<div class="slide-content">
-				<h2>Animated Code Walkthrough</h2>
-				<pre><code class="fragment" data-fragment-index="1">
-  /* Step 1: Setup configuration */
-  System.out.println("Loading configuration...");
-          </code></pre>
-				<pre><code class="fragment" data-fragment-index="2">
-  /* Step 2: Refactor legacy code */
-  refactorLegacyCode();
-          </code></pre>
-				<pre><code class="fragment" data-fragment-index="3">
-  /* Step 3: Deploy application */
-  deployApplication();
-          </code></pre>
-			</div>
-		</section>
-
-		<!-- Slide 8: Two-Column Slide (Code & Explanation) -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Refactoring+Details"
-		>
-			<div class="slide-content">
-				<h2>Refactoring Details</h2>
-				<div class="two-column">
-					<div>
-						<h3>Code</h3>
-						<pre><code class="java">
-  public String refactor() &#123;
-    // New, optimized implementation
-    return "Refactored";
-  &#125;
-              </code></pre>
+					<li class="fragment">Deployment of REST API and ThymeLeaf front end</li>
+					<div style="display: grid; grid-template-columns: 1fr 1fr;">
+						<img src="10.png" alt="" class="img fragment" />
+						<img src="11.png" alt="" class="img fragment" />
 					</div>
-					<div>
-						<h3>Explanation</h3>
-						<p>
-							The refactored method simplifies the original logic by removing
-							redundant steps and enhancing performance.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="logo-overlay">
-				<img
-					src="https://via.placeholder.com/80x80.png?text=MongoDB+Logo"
-					alt="MongoDB Logo"
-				/>
-			</div>
-		</section>
-
-		<!-- Slide 9: Text Overlay on Background Image with an SVG Shape -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Modern+Architecture"
-		>
-			<div class="slide-content">
-				<h2 style="color: white; background: rgba(0,0,0,0.5); padding: 10px;">
-					Modern Architecture Overview
-				</h2>
-				<p style="color: white; background: rgba(0,0,0,0.5); padding: 10px;">
-					Leveraging modern frameworks and cloud capabilities.
-				</p>
-			</div>
-			<div class="mongodb-shape">
-				<svg viewBox="0 0 100 100">
-					<polygon points="50,10 90,90 10,90" fill="rgba(0,237,100,0.3)" />
-				</svg>
-			</div>
-		</section>
-
-		<!-- Slide 10: Additional Bullet List Slide -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Infrastructure+%26+Tools"
-		>
-			<div class="slide-content">
-				<h2>Infrastructure & Tools</h2>
-				<ul>
-					<li>Spring Boot / Quarkus on Java 21</li>
-					<li>MongoDB integration</li>
-					<li>Automated testing framework</li>
-					<li>CI/CD pipelines</li>
-				</ul>
-			</div>
-			<div class="logo-overlay">
-				<img
-					src="https://via.placeholder.com/80x80.png?text=MongoDB+Logo"
-					alt="MongoDB Logo"
-				/>
-			</div>
-		</section>
-
-		<!-- Slide 11: Detailed Code Walkthrough with Fragments -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Detailed+Code+Walkthrough"
-		>
-			<div class="slide-content">
-				<h2>Detailed Code Walkthrough</h2>
-				<pre><code class="fragment" data-fragment-index="1">
-  function setup() &#123;
-    // Configure environment variables
-    configureEnvironment();
-  &#125;
-          </code></pre>
-				<pre><code class="fragment" data-fragment-index="2">
-  function configureEnvironment() &#123;
-    console.log("Environment configured");
-  &#125;
-          </code></pre>
-				<pre><code class="fragment" data-fragment-index="3">
-  setup();
-          </code></pre>
-			</div>
-		</section>
-
-		<!-- Slide 12: Migration Timeline -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Migration+Timeline"
-		>
-			<div class="slide-content">
-				<h2>Migration Timeline</h2>
-				<ul>
-					<li><strong>Week 1:</strong> Project Setup & Legacy Analysis</li>
-					<li><strong>Week 2:</strong> Task Breakdown & Infrastructure Setup</li>
-					<li><strong>Week 3:</strong> Code Refactoring & Testing</li>
-					<li><strong>Week 4:</strong> Deployment & Demo Preparation</li>
 				</ul>
 			</div>
 		</section>
-
-		<!-- Slide 13: Before & After Code Comparison -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Before+%26+After"
-		>
-			<div class="slide-content">
-				<h2>Before & After</h2>
-				<div class="two-column">
-					<div>
-						<h3>Before</h3>
-						<pre><code class="java">
-  // Legacy method
-  public void process() &#123;
-    // outdated implementation
-  &#125;
-              </code></pre>
-					</div>
-					<div>
-						<h3>After</h3>
-						<pre><code class="java">
-  // Updated method using Spring Boot
-  @RestController
-  public class ProcessController &#123;
-    @GetMapping("/process")
-    public String process() &#123;
-      return "Processed";
-    &#125;
-  &#125;
-              </code></pre>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Slide 14: Two-Column Slide (Text & Image) -->
-		<section
-			data-background-image="https://via.placeholder.com/1200x800.png?text=Project+Impact"
-		>
-			<div class="slide-content">
-				<h2>Project Impact</h2>
-				<div class="two-column" style="align-items: center;">
-					<div>
-						<ul>
-							<li>Enhanced performance</li>
-							<li>Improved maintainability</li>
-							<li>Modern, scalable architecture</li>
-						</ul>
-					</div>
-					<div>
-						<img
-							src="https://via.placeholder.com/400x300.png?text=Impact+Image"
-							alt="Project Impact"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Slide 15: Q&A / Discussion -->
-		<section data-background-image="https://via.placeholder.com/1200x800.png?text=Q%26A">
-			<div class="slide-content">
-				<h2>Questions & Discussion</h2>
-				<p>
-					Open floor for questions and further discussion during the playback interview.
-				</p>
-			</div>
-			<div class="logo-overlay">
-				<img
-					src="https://via.placeholder.com/80x80.png?text=MongoDB+Logo"
-					alt="MongoDB Logo"
-				/>
+		<section class="slide-content" data-auto-animate>
+			<h1>Conclusion</h1>
+			<div class="container">
+				<ul>
+					<li class="fragment">
+						Overall, the migration was a success. The application is now running on
+						Spring Boot 3 and Java 21 with a MongoDB backend. With all code being
+						migrated to more modern paradigms.
+					</li>
+					<li class="fragment">
+						In general, as the size of the codebase scales as does the complexity.
+						Identifing and converting relatively isolated modules is a great way to
+						attack larger projects.
+					</li>
+				</ul>
 			</div>
 		</section>
 	</div>
@@ -551,5 +385,10 @@
 		border: 1px solid rgb(61, 79, 88);
 		border-radius: 24px;
 		padding: 1em 1em 1.4em 1em;
+	}
+
+	.img {
+		border: 1px solid rgb(61, 79, 88);
+		border-radius: 24px;
 	}
 </style>

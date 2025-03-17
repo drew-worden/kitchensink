@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 (
     info = @io.swagger.v3.oas.annotations.info.Info(title = "Kitchen Sink API", version = "v1", description = "The Kitchen Sink API"),
         servers = {
-            @io.swagger.v3.oas.annotations.servers.Server(url = "http://localhost:8080/rest/v1", description = "Local server"),
-            @io.swagger.v3.oas.annotations.servers.Server(url = "http://kitchensink-spring.drew.zip/rest", description = "Deployed server")
+            @io.swagger.v3.oas.annotations.servers.Server(url = "http://localhost:8080", description = "Local server"),
+            @io.swagger.v3.oas.annotations.servers.Server(url = "http://kitchensink-spring.drew.zip", description = "Deployed server")
         }
 )
 @SpringBootApplication

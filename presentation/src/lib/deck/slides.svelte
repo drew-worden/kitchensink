@@ -38,7 +38,7 @@
 				<h2 style="color: var(--r-link-color-dark)">Developer Candidate Challenge</h2>
 				<p>Prepared by Drew Worden</p>
 				<pre
-					style="display: flex; flex-direction: column; align-items: center;">March 13th, 2025</pre>
+					style="display: flex; flex-direction: column; align-items: center;">March 19th, 2025</pre>
 			</div>
 		</section>
 
@@ -46,9 +46,25 @@
 			<h1>Resources</h1>
 			<div class="container">
 				<ul>
-					<li class="fragment">Code: <a target="_blank" href="https://github.com/drew-worden/kitchensink">https://github.com/drew-worden/kitchensink</a></li>
-					<li class="fragment">Migrated Application: <a target="_blank" href="https://kitchensink-spring.drew.zip">https://kitchensink-spring.drew.zip/</a></li>
-					<li class="fragment">Presentation: <a target="_blank" href="https://kitchensink-presentation.drew.zip">https://kitchensink-presentation.drew.zip</a></li>
+					<li class="fragment">
+						Code: <a target="_blank" href="https://github.com/drew-worden/kitchensink"
+							>https://github.com/drew-worden/kitchensink</a
+						>
+					</li>
+					<li class="fragment">
+						Migrated Application: <a
+							target="_blank"
+							href="https://kitchensink-spring.drew.zip"
+							>https://kitchensink-spring.drew.zip/</a
+						>
+					</li>
+					<li class="fragment">
+						Presentation: <a
+							target="_blank"
+							href="https://kitchensink-presentation.drew.zip"
+							>https://kitchensink-presentation.drew.zip</a
+						>
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -331,6 +347,24 @@
 		</section>
 
 		<section class="slide-content" data-auto-animate>
+			<h1>Test Thoroughly</h1>
+			<p>M.I.G.R.A.<span style="color: var(--r-link-color)">T</span>.E</p>
+			<div class="container">
+				<p class="fragment" style="color: var(--r-link-color-dark);">Execution.</p>
+				<ul>
+					<li class="fragment">
+						Write unit and integration tests for controllers, services, mappers, and
+						repositories
+					</li>
+					<div style="display: grid; grid-template-columns: 1fr 1fr;">
+						<img src="12.png" alt="" class="img fragment" />
+						<img src="13.png" alt="" class="img fragment" />
+					</div>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide-content" data-auto-animate>
 			<h1>Execute and Evaluate</h1>
 			<p>M.I.G.R.A.T.<span style="color: var(--r-link-color)">E</span></p>
 			<div class="container">
@@ -386,17 +420,90 @@
 		<section class="slide-content" data-auto-animate>
 			<h1>Appendix: Scalability</h1>
 			<div class="container">
-				<p>Strategies</p>
+				<p>How to handle migration as the size/complexity grows.</p>
 				<ul>
 					<li class="fragment">
-						Overall, the migration was a success. The application is now running on
-						Spring Boot 3 and Java 21 with a MongoDB backend. With all code being
-						migrated to more modern paradigms.
+						Use a strangler pattern - migrate smaller, isolated components first while
+						maintaining interoperability.
 					</li>
 					<li class="fragment">
-						In general, as the size of the codebase scales as does the complexity.
-						Identifing and converting relatively isolated modules is a great way to
-						attack larger projects.
+						Implement change data capture (CDC) systems to keep source and target
+						databases synchronized during phased migration
+					</li>
+					<li>
+						Create/leverage comprehensive test suites to validate each migrated
+						component independently
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide-content" data-auto-animate>
+			<h1>Appendix: Scalability</h1>
+			<div class="container">
+				<p>How to handle migration as the size/complexity grows.</p>
+				<ul>
+					<li class="fragment">
+						Implement intelligent code scanning tools to identify common patterns for
+						automated conversion.
+					</li>
+					<li class="fragment">
+						Develop reusable migration templates for repetitive structures across the
+						application
+					</li>
+					<li>
+						Use feature flags to toggle between old and new implementations for gradual
+						cutover
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide-content" data-auto-animate>
+			<h1>Appendix: Scalability</h1>
+			<div class="container">
+				<p>How to handle migration as the size/complexity grows.</p>
+				<ul>
+					<li class="fragment">
+						Create abstraction layers that isolate complex logic for special handling
+					</li>
+					<li class="fragment">
+						Implement domain-specific parsers for particularly challenging code sections
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide-content" data-auto-animate>
+			<h1>Appendix: PL/SQL</h1>
+			<div class="container">
+				<p>How to perform large migrations on PL/SQL procedures.</p>
+				<ul>
+					<li class="fragment">
+						Decompose complex procedures into smaller, more manageable functions
+					</li>
+					<li class="fragment">
+						Create a custom DSL (Domain Specific Language) translator for proprietary
+						syntax
+					</li>
+					<li class="fragment">
+						Implement runtime interpretation layers for edge cases that resist direct
+						conversion
+					</li>
+				</ul>
+			</div>
+			<h1>Appendix: PL/SQL</h1>
+			<div class="container">
+				<p>How to perform large migrations on PL/SQL procedures.</p>
+				<ul>
+					<li class="fragment">
+						Use targeted fine-tuning for AI models with examples of your specific
+						codebase patterns
+					</li>
+					<li class="fragment">
+						Create specialized prompts for different procedure types (reporting, ETL,
+						CRUD)
+					</li>
+					<li class="fragment">
+						Make use of newer cutting edge patterns such as recursive revision agentic
+						systems.
 					</li>
 				</ul>
 			</div>

@@ -1,5 +1,7 @@
+// Package
 package org.jboss.as.quickstarts.kitchensink.controllers;
 
+// Imports
 import com.mongodb.MongoWriteException;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -11,16 +13,27 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controller for the member dashboard.
+ */
 @Slf4j
 @Controller
 @RequestMapping("/dashboard")
 public class MemberController {
+
+    // Dependencies
     private final MemberRegistration memberRegistration;
 
+    // Constructor
     public MemberController(MemberRegistration memberRegistration) {
         this.memberRegistration = memberRegistration;
     }
 
+    /**
+     * Get the dashboard page.
+     * @param model The model to add attributes to.
+     * @return The dashboard page.
+     */
     @GetMapping
     public String getDashboard(Model model) {
         Iterable<MemberResponseDTO> members = memberRegistration.getAllMembers();
@@ -28,12 +41,24 @@ public class MemberController {
         return "dashboard";
     }
 
+    /**
+     * Show the member form.
+     * @param model The model to add attributes to.
+     * @return The member form page.
+     */
     @GetMapping("/new")
     public String showMemberForm(Model model) {
         model.addAttribute("member", new MemberCreateDTO());
         return "member-form";
     }
 
+    /**
+     * Register a new member.
+     * @param memberCreateDTO The member to register.
+     * @param result The binding result.
+     * @param model The model to add attributes to.
+     * @return The dashboard page.
+     */
     @PostMapping("/new")
     public String registerMember(@Valid @ModelAttribute MemberCreateDTO memberCreateDTO,
                                  BindingResult result,
@@ -64,6 +89,12 @@ public class MemberController {
         }
     }
 
+    /**
+     * Get a member by ID.
+     * @param id The ID of the member to get.
+     * @param model The model to add attributes to.
+     * @return The member detail page.
+     */
     @GetMapping("/{id}")
     public String getMemberById(@PathVariable String id, Model model) {
         log.info("Attempting to retrieve member with ID: {}", id);

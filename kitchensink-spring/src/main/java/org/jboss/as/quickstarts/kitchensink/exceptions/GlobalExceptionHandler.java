@@ -1,5 +1,7 @@
+// Package
 package org.jboss.as.quickstarts.kitchensink.exceptions;
 
+// Imports
 import com.mongodb.MongoWriteException;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
@@ -8,13 +10,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
 import java.util.List;
 
+/**
+ * Global exception handler for the application.
+ */
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+    /**
+     * Handles the ResourceNotFoundException.
+     * @param ex The exception.
+     * @return The response entity.
+     */
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<KitchenSinkResponse<?>> handleResourceNotFoundException(ResourceNotFoundException ex) {
         log.error("Resource not found: {}", ex.getMessage());
@@ -25,6 +34,11 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
+    /**
+     * Handles the ConstraintViolationException.
+     * @param ex The exception.
+     * @return The response entity.
+     */
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<KitchenSinkResponse<?>> handleConstraintViolationException(ConstraintViolationException ex) {
         log.error("Validation error: {}", ex.getMessage());
@@ -37,6 +51,11 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
+    /**
+     * Handles the MongoWriteException.
+     * @param ex The exception.
+     * @return The response entity.
+     */
     @ExceptionHandler(MongoWriteException.class)
     public ResponseEntity<KitchenSinkResponse<?>> handleMongoWriteException(MongoWriteException ex) {
         log.error("Database write error: {}", ex.getMessage());

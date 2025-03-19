@@ -1,10 +1,15 @@
+// Package
 package org.jboss.as.quickstarts.kitchensink.dtos.members;
 
+// Imports
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Used to return a member
+ */
 @Data
 @Builder
 @AllArgsConstructor

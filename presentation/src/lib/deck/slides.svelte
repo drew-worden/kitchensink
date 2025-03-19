@@ -489,6 +489,8 @@
 					</li>
 				</ul>
 			</div>
+		</section>
+		<section class="slide-content" data-auto-animate>
 			<h1>Appendix: PL/SQL</h1>
 			<div class="container">
 				<p>How to perform large migrations on PL/SQL procedures.</p>

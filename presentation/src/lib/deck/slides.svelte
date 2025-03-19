@@ -430,7 +430,7 @@
 						Implement change data capture (CDC) systems to keep source and target
 						databases synchronized during phased migration
 					</li>
-					<li>
+					<li class="fragment">
 						Create/leverage comprehensive test suites to validate each migrated
 						component independently
 					</li>
@@ -450,7 +450,7 @@
 						Develop reusable migration templates for repetitive structures across the
 						application
 					</li>
-					<li>
+					<li class="fragment">
 						Use feature flags to toggle between old and new implementations for gradual
 						cutover
 					</li>

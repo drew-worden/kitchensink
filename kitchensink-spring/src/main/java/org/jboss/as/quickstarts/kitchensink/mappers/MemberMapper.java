@@ -5,6 +5,7 @@ package org.jboss.as.quickstarts.kitchensink.mappers;
 import org.jboss.as.quickstarts.kitchensink.dtos.members.MemberCreateDTO;
 import org.jboss.as.quickstarts.kitchensink.dtos.members.MemberResponseDTO;
 import org.jboss.as.quickstarts.kitchensink.model.Member;
+import org.springframework.context.annotation.Bean;
 
 /**
  * Maps a Member entity to a MemberCreateDTO and vice versa.

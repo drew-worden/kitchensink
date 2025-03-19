@@ -1,5 +1,5 @@
 // Package
-package org.jboss.as.quickstarts.kitchensink.service;
+package org.jboss.as.quickstarts.kitchensink.services;
 
 // Imports
 import lombok.extern.slf4j.Slf4j;

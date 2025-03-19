@@ -42,6 +42,17 @@
 			</div>
 		</section>
 
+		<section class="slide-content" data-auto-animate>
+			<h1>Resources</h1>
+			<div class="container">
+				<ul>
+					<li class="fragment">Code: <a target="_blank" href="https://github.com/drew-worden/kitchensink">https://github.com/drew-worden/kitchensink</a></li>
+					<li class="fragment">Migrated Application: <a target="_blank" href="https://kitchensink-spring.drew.zip">https://kitchensink-spring.drew.zip/</a></li>
+					<li class="fragment">Presentation: <a target="_blank" href="https://kitchensink-presentation.drew.zip">https://kitchensink-presentation.drew.zip</a></li>
+				</ul>
+			</div>
+		</section>
+
 		<!-- Slide 2: Introduction with Markdown Bullet Points -->
 		<section class="slide-content" data-auto-animate>
 			<h1>The Task</h1>
@@ -358,6 +369,24 @@
 		<section class="slide-content" data-auto-animate>
 			<h1>Conclusion</h1>
 			<div class="container">
+				<ul>
+					<li class="fragment">
+						Overall, the migration was a success. The application is now running on
+						Spring Boot 3 and Java 21 with a MongoDB backend. With all code being
+						migrated to more modern paradigms.
+					</li>
+					<li class="fragment">
+						In general, as the size of the codebase scales as does the complexity.
+						Identifing and converting relatively isolated modules is a great way to
+						attack larger projects.
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide-content" data-auto-animate>
+			<h1>Appendix: Scalability</h1>
+			<div class="container">
+				<p>Strategies</p>
 				<ul>
 					<li class="fragment">
 						Overall, the migration was a success. The application is now running on

@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
             return new ResponseEntity<>(response, HttpStatus.CONFLICT);
         } else {
             KitchenSinkResponse<?> response = KitchenSinkResponse.builder()
-                    .message("Database write error.")
+                    .message("A resource with the provided email already exists.")
                     .errors(List.of(ex.getMessage()))
                     .build();
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);

@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.jboss.as.quickstarts.kitchensink.dtos.members.MemberCreateDTO;
 import org.jboss.as.quickstarts.kitchensink.dtos.members.MemberResponseDTO;
 import org.jboss.as.quickstarts.kitchensink.dtos.members.global.KitchenSinkResponse;
-import org.jboss.as.quickstarts.kitchensink.service.MemberRegistration;
+import org.jboss.as.quickstarts.kitchensink.services.MemberRegistration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
